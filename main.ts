@@ -10,14 +10,10 @@ router.get("/:path", (ctx) => {
     }
 });
 
-
 router.get("/:path1/:path2", (ctx) => {
     ctx.response.headers.append("Content-Type", "text/html");
     ctx.response.body = `${ctx.params.path1} ${ctx.params.path2}`;
 });
-
-
-
 
 app.use(router.routes());
 app.use(router.allowedMethods());
